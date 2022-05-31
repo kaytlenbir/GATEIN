@@ -24,12 +24,6 @@ namespace Gate_In
             db.ConnectionString = @"host=10.1.70.58; port=3306; uid=root; database=manheim_database; pwd=root;";
             return db;
         }
-
-        private void start_barcode_scanner()
-        {
-            MessageBox.Show("Not implemented yet!");
-        }
-
         private bool validation()
         {
             try
@@ -105,9 +99,11 @@ namespace Gate_In
             if (valid) add_vehicle();
         }
 
-        private void scan_barcode_btn_Click_1(object sender, EventArgs e)
+        private void scan_barcode_btn_Click(object sender, EventArgs e)
         {
-            start_barcode_scanner();
+            this.Hide();
+            Form form = new barcode_scanner();
+            form.Show();
         }
     }
 }

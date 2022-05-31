@@ -173,7 +173,7 @@
             this.scan_barcode_btn.TabIndex = 13;
             this.scan_barcode_btn.Text = "Scan";
             this.scan_barcode_btn.UseVisualStyleBackColor = false;
-            this.scan_barcode_btn.Click += new System.EventHandler(this.scan_barcode_btn_Click_1);
+            this.scan_barcode_btn.Click += new System.EventHandler(this.scan_barcode_btn_Click);
             // 
             // submit_btn
             // 
