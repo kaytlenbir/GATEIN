@@ -20,7 +20,7 @@ namespace Gate_In
         private MySqlConnection connect_to_db()
         {
             MySqlConnection db = new MySqlConnection();
-            db.ConnectionString = @"host=10.1.70.58; port=3306; uid=root; database=manheim_database; pwd=root;";
+            db.ConnectionString = @"host=10.252.0.104; port=3306; uid=root; database=manheim_database; pwd=root;";
             return db;
         }
         private bool validation()
@@ -48,13 +48,18 @@ namespace Gate_In
                 MessageBox.Show("The odometer reading must be a number!");
                 return false;
             }
-            return true;
+            if (private_reg_radbtn.Checked == false && prefix_reg_radbtn.Checked == false)
+            {
+                MessageBox.Show("You must tick whether the car has a priatve registration or not!");
+                return false;
+            }
+            return true;    
         }
 
         private void add_vehicle()
         {
             MySqlConnection db = connect_to_db();
-            string command = "INSERT INTO gatein(vrm, odometer, fuelcapacity, vendor, barcode) VALUES(@VRM, @Odometer, @FTCapacity, @Vendor, @Barcode)";
+            string command = "INSERT INTO gatein(vrm, odometer, fuelcapacity, vendor, barcode, isprivate) VALUES(@VRM, @Odometer, @FTCapacity, @Vendor, @Barcode, @IsPrivate)";
             using (db)
             {
                 MySqlCommand add_data = new MySqlCommand(command, db);
@@ -69,6 +74,17 @@ namespace Gate_In
                 add_data.Parameters["@Vendor"].Value = vendor_txt.Text;
                 add_data.Parameters.Add("@Barcode", MySqlDbType.VarChar);
                 add_data.Parameters["@Barcode"].Value = barcode_txt.Text;
+                if (private_reg_radbtn.Checked == true)
+                {
+                    add_data.Parameters.Add("@IsPrivate", MySqlDbType.VarChar);
+                    add_data.Parameters["@IsPrivate"].Value = true;
+                }
+                else
+                {
+                    add_data.Parameters.Add("@IsPrivate", MySqlDbType.VarChar);
+                    add_data.Parameters["@IsPrivate"].Value = false;
+                }
+                
 
                 try // tries to run the query, any exceptions or issues will be caught.
                 {

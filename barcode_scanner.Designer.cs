@@ -155,6 +155,7 @@
             this.back_btn.TabIndex = 28;
             this.back_btn.Text = "Go Back";
             this.back_btn.UseVisualStyleBackColor = false;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
             // submit_btn
             // 

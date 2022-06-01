@@ -74,5 +74,14 @@ namespace Gate_In
         {
             test();
         }
+
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            foreach (getting_car_details form in Application.OpenForms)
+            {
+                form.Show();
+            }
+        }
     }
 }

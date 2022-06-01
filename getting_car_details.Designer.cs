@@ -54,6 +54,11 @@
             this.odometer_txt_decor_pnl = new System.Windows.Forms.Panel();
             this.vr_txt_decor_pnl = new System.Windows.Forms.Panel();
             this.fuel_txt_decor_pnl = new System.Windows.Forms.Panel();
+            this.prefix_reg_radbtn = new System.Windows.Forms.RadioButton();
+            this.private_reg_radbtn = new System.Windows.Forms.RadioButton();
+            this.rad_btn_back_pnl = new System.Windows.Forms.Panel();
+            this.rad_btn_decor_pnl = new System.Windows.Forms.Panel();
+            this.rad_btn_ = new System.Windows.Forms.Panel();
             this.top_pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.compnay_logo_png)).BeginInit();
             this.vr_lbl_decor_pnl.SuspendLayout();
@@ -61,6 +66,7 @@
             this.barcode_lbl_decor_pnl.SuspendLayout();
             this.vendor_lbl_decor_pnl.SuspendLayout();
             this.fuel_lbl_decor_pnl.SuspendLayout();
+            this.rad_btn_back_pnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // top_pnl
@@ -180,7 +186,7 @@
             this.submit_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(68)))), ((int)(((byte)(140)))));
             this.submit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.submit_btn.ForeColor = System.Drawing.Color.White;
-            this.submit_btn.Location = new System.Drawing.Point(861, 636);
+            this.submit_btn.Location = new System.Drawing.Point(1248, 636);
             this.submit_btn.Name = "submit_btn";
             this.submit_btn.Size = new System.Drawing.Size(163, 68);
             this.submit_btn.TabIndex = 14;
@@ -236,7 +242,7 @@
             // submit_btn_decor_pnl
             // 
             this.submit_btn_decor_pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(176)))), ((int)(((byte)(49)))));
-            this.submit_btn_decor_pnl.Location = new System.Drawing.Point(869, 646);
+            this.submit_btn_decor_pnl.Location = new System.Drawing.Point(1256, 646);
             this.submit_btn_decor_pnl.Name = "submit_btn_decor_pnl";
             this.submit_btn_decor_pnl.Size = new System.Drawing.Size(163, 67);
             this.submit_btn_decor_pnl.TabIndex = 20;
@@ -289,11 +295,60 @@
             this.fuel_txt_decor_pnl.Size = new System.Drawing.Size(499, 44);
             this.fuel_txt_decor_pnl.TabIndex = 26;
             // 
+            // prefix_reg_radbtn
+            // 
+            this.prefix_reg_radbtn.AutoSize = true;
+            this.prefix_reg_radbtn.Location = new System.Drawing.Point(14, 7);
+            this.prefix_reg_radbtn.Name = "prefix_reg_radbtn";
+            this.prefix_reg_radbtn.Size = new System.Drawing.Size(280, 40);
+            this.prefix_reg_radbtn.TabIndex = 27;
+            this.prefix_reg_radbtn.TabStop = true;
+            this.prefix_reg_radbtn.Text = "Prefix Registration";
+            this.prefix_reg_radbtn.UseVisualStyleBackColor = true;
+            // 
+            // private_reg_radbtn
+            // 
+            this.private_reg_radbtn.AutoSize = true;
+            this.private_reg_radbtn.Location = new System.Drawing.Point(14, 53);
+            this.private_reg_radbtn.Name = "private_reg_radbtn";
+            this.private_reg_radbtn.Size = new System.Drawing.Size(296, 40);
+            this.private_reg_radbtn.TabIndex = 28;
+            this.private_reg_radbtn.TabStop = true;
+            this.private_reg_radbtn.Text = "Private Registration";
+            this.private_reg_radbtn.UseVisualStyleBackColor = true;
+            // 
+            // rad_btn_back_pnl
+            // 
+            this.rad_btn_back_pnl.BackColor = System.Drawing.Color.White;
+            this.rad_btn_back_pnl.Controls.Add(this.prefix_reg_radbtn);
+            this.rad_btn_back_pnl.Controls.Add(this.private_reg_radbtn);
+            this.rad_btn_back_pnl.Location = new System.Drawing.Point(716, 600);
+            this.rad_btn_back_pnl.Name = "rad_btn_back_pnl";
+            this.rad_btn_back_pnl.Size = new System.Drawing.Size(322, 100);
+            this.rad_btn_back_pnl.TabIndex = 29;
+            // 
+            // rad_btn_decor_pnl
+            // 
+            this.rad_btn_decor_pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(176)))), ((int)(((byte)(49)))));
+            this.rad_btn_decor_pnl.Location = new System.Drawing.Point(701, 594);
+            this.rad_btn_decor_pnl.Name = "rad_btn_decor_pnl";
+            this.rad_btn_decor_pnl.Size = new System.Drawing.Size(322, 100);
+            this.rad_btn_decor_pnl.TabIndex = 30;
+            // 
+            // rad_btn_
+            // 
+            this.rad_btn_.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(68)))), ((int)(((byte)(140)))));
+            this.rad_btn_.Location = new System.Drawing.Point(730, 607);
+            this.rad_btn_.Name = "rad_btn_";
+            this.rad_btn_.Size = new System.Drawing.Size(321, 99);
+            this.rad_btn_.TabIndex = 31;
+            // 
             // getting_car_details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1700, 1012);
+            this.Controls.Add(this.rad_btn_back_pnl);
             this.Controls.Add(this.vendor_txt);
             this.Controls.Add(this.submit_btn);
             this.Controls.Add(this.barcode_txt);
@@ -314,6 +369,8 @@
             this.Controls.Add(this.vr_txt_decor_pnl);
             this.Controls.Add(this.fuel_txt_decor_pnl);
             this.Controls.Add(this.barcode_txt_decor_pnl);
+            this.Controls.Add(this.rad_btn_decor_pnl);
+            this.Controls.Add(this.rad_btn_);
             this.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "getting_car_details";
@@ -332,6 +389,8 @@
             this.vendor_lbl_decor_pnl.PerformLayout();
             this.fuel_lbl_decor_pnl.ResumeLayout(false);
             this.fuel_lbl_decor_pnl.PerformLayout();
+            this.rad_btn_back_pnl.ResumeLayout(false);
+            this.rad_btn_back_pnl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,6 +424,11 @@
         private System.Windows.Forms.Panel vr_txt_decor_pnl;
         private System.Windows.Forms.Panel fuel_txt_decor_pnl;
         public System.Windows.Forms.TextBox barcode_txt;
+        private System.Windows.Forms.RadioButton prefix_reg_radbtn;
+        private System.Windows.Forms.RadioButton private_reg_radbtn;
+        private System.Windows.Forms.Panel rad_btn_back_pnl;
+        private System.Windows.Forms.Panel rad_btn_decor_pnl;
+        private System.Windows.Forms.Panel rad_btn_;
     }
 }
 
