@@ -17,7 +17,6 @@ namespace Gate_In
         {
             InitializeComponent();
         }
-
         private MySqlConnection connect_to_db()
         {
             MySqlConnection db = new MySqlConnection();
@@ -101,9 +100,9 @@ namespace Gate_In
 
         private void scan_barcode_btn_Click(object sender, EventArgs e)
         {
+            barcode_scanner barcodescannerpage = new barcode_scanner();
             this.Hide();
-            Form form = new barcode_scanner();
-            form.Show();
+            barcodescannerpage.Show();
         }
     }
 }

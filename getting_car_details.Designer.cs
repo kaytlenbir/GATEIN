@@ -349,7 +349,6 @@
         private System.Windows.Forms.TextBox vehicle_reg_txt;
         private System.Windows.Forms.TextBox odometer_txt;
         private System.Windows.Forms.TextBox fuel_capacity_txt;
-        private System.Windows.Forms.TextBox barcode_txt;
         private System.Windows.Forms.TextBox vendor_txt;
         private System.Windows.Forms.Button scan_barcode_btn;
         private System.Windows.Forms.Button submit_btn;
@@ -365,6 +364,7 @@
         private System.Windows.Forms.Panel odometer_txt_decor_pnl;
         private System.Windows.Forms.Panel vr_txt_decor_pnl;
         private System.Windows.Forms.Panel fuel_txt_decor_pnl;
+        public System.Windows.Forms.TextBox barcode_txt;
     }
 }
 

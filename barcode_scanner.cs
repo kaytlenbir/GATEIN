@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AForge.Video.DirectShow;
 using ZXing;
-namespace BarcodeScanner
+
+namespace Gate_In
 {
     public partial class barcode_scanner : Form
     {
@@ -20,22 +21,12 @@ namespace BarcodeScanner
 
         FilterInfoCollection filterInfoCollection;
         VideoCaptureDevice videoCaptureDevice;
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            foreach (FilterInfo device in filterInfoCollection)
-                ComboBox_Camera.Items.Add(device.Name);
-            ComboBox_Camera.SelectedIndex = 0;
-        }
-        private void Btn_Start_Click(object sender, EventArgs e)
-        {
-            videoCaptureDevice = new VideoCaptureDevice(filterInfoCollection[ComboBox_Camera.SelectedIndex].MonikerString);
-            videoCaptureDevice.NewFrame += VideoCaptureDevice_NewFrame;
-            videoCaptureDevice.Start();
-        }
+        public string barcode = null;
+
         private void VideoCaptureDevice_NewFrame(object sender, AForge.Video.NewFrameEventArgs eventArgs)
         {
             Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
+            bitmap.RotateFlip(RotateFlipType.RotateNoneFlipX);
             BarcodeReader reader = new BarcodeReader();
             var result = reader.Decode(bitmap);
             if (result != null)
@@ -43,17 +34,45 @@ namespace BarcodeScanner
                 TxtBox_Barcode.Invoke(new MethodInvoker(delegate ()
                 {
                     TxtBox_Barcode.Text = result.ToString();
+                    submit_btn.Visible = true;
+                    submit_btn_decor_pnl.Visible = true;
+                    barcode = result.ToString();
                 }));
             }
             pictureBox.Image = bitmap;
         }
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+
+        private void test()
         {
+            this.Close();
+
             if (videoCaptureDevice != null)
             {
                 if (videoCaptureDevice.IsRunning)
                     videoCaptureDevice.Stop();
             }
+            foreach (getting_car_details form in Application.OpenForms)
+            {
+                form.barcode_txt.Text = barcode;
+                form.Show();
+            }  
+            
+        }
+
+        private void barcode_scanner_Load(object sender, EventArgs e)
+        {
+            filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            foreach (FilterInfo device in filterInfoCollection)
+                ComboBox_Camera.Items.Add(device.Name);
+            ComboBox_Camera.SelectedIndex = 0;
+            videoCaptureDevice = new VideoCaptureDevice(filterInfoCollection[ComboBox_Camera.SelectedIndex].MonikerString);
+            videoCaptureDevice.NewFrame += VideoCaptureDevice_NewFrame;
+            videoCaptureDevice.Start();
+        }
+
+        private void submit_btn_Click(object sender, EventArgs e)
+        {
+            test();
         }
     }
 }
