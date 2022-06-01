@@ -59,6 +59,12 @@
             this.rad_btn_back_pnl = new System.Windows.Forms.Panel();
             this.rad_btn_decor_pnl = new System.Windows.Forms.Panel();
             this.rad_btn_ = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.top_pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.compnay_logo_png)).BeginInit();
             this.vr_lbl_decor_pnl.SuspendLayout();
@@ -67,6 +73,7 @@
             this.vendor_lbl_decor_pnl.SuspendLayout();
             this.fuel_lbl_decor_pnl.SuspendLayout();
             this.rad_btn_back_pnl.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // top_pnl
@@ -135,35 +142,35 @@
             // 
             // vehicle_reg_txt
             // 
-            this.vehicle_reg_txt.Location = new System.Drawing.Point(78, 339);
+            this.vehicle_reg_txt.Location = new System.Drawing.Point(70, 297);
             this.vehicle_reg_txt.Name = "vehicle_reg_txt";
             this.vehicle_reg_txt.Size = new System.Drawing.Size(499, 44);
             this.vehicle_reg_txt.TabIndex = 8;
             // 
             // odometer_txt
             // 
-            this.odometer_txt.Location = new System.Drawing.Point(78, 491);
+            this.odometer_txt.Location = new System.Drawing.Point(70, 449);
             this.odometer_txt.Name = "odometer_txt";
             this.odometer_txt.Size = new System.Drawing.Size(499, 44);
             this.odometer_txt.TabIndex = 9;
             // 
             // fuel_capacity_txt
             // 
-            this.fuel_capacity_txt.Location = new System.Drawing.Point(78, 649);
+            this.fuel_capacity_txt.Location = new System.Drawing.Point(70, 607);
             this.fuel_capacity_txt.Name = "fuel_capacity_txt";
             this.fuel_capacity_txt.Size = new System.Drawing.Size(499, 44);
             this.fuel_capacity_txt.TabIndex = 10;
             // 
             // barcode_txt
             // 
-            this.barcode_txt.Location = new System.Drawing.Point(751, 339);
+            this.barcode_txt.Location = new System.Drawing.Point(743, 297);
             this.barcode_txt.Name = "barcode_txt";
             this.barcode_txt.Size = new System.Drawing.Size(499, 44);
             this.barcode_txt.TabIndex = 11;
             // 
             // vendor_txt
             // 
-            this.vendor_txt.Location = new System.Drawing.Point(750, 491);
+            this.vendor_txt.Location = new System.Drawing.Point(742, 449);
             this.vendor_txt.Name = "vendor_txt";
             this.vendor_txt.Size = new System.Drawing.Size(499, 44);
             this.vendor_txt.TabIndex = 12;
@@ -173,7 +180,7 @@
             this.scan_barcode_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(68)))), ((int)(((byte)(140)))));
             this.scan_barcode_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.scan_barcode_btn.ForeColor = System.Drawing.Color.White;
-            this.scan_barcode_btn.Location = new System.Drawing.Point(1281, 339);
+            this.scan_barcode_btn.Location = new System.Drawing.Point(1273, 297);
             this.scan_barcode_btn.Name = "scan_barcode_btn";
             this.scan_barcode_btn.Size = new System.Drawing.Size(122, 44);
             this.scan_barcode_btn.TabIndex = 13;
@@ -186,7 +193,7 @@
             this.submit_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(68)))), ((int)(((byte)(140)))));
             this.submit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.submit_btn.ForeColor = System.Drawing.Color.White;
-            this.submit_btn.Location = new System.Drawing.Point(1248, 636);
+            this.submit_btn.Location = new System.Drawing.Point(551, 706);
             this.submit_btn.Name = "submit_btn";
             this.submit_btn.Size = new System.Drawing.Size(163, 68);
             this.submit_btn.TabIndex = 14;
@@ -198,7 +205,7 @@
             // 
             this.vr_lbl_decor_pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(176)))), ((int)(((byte)(49)))));
             this.vr_lbl_decor_pnl.Controls.Add(this.vr_lbl);
-            this.vr_lbl_decor_pnl.Location = new System.Drawing.Point(31, 288);
+            this.vr_lbl_decor_pnl.Location = new System.Drawing.Point(23, 246);
             this.vr_lbl_decor_pnl.Name = "vr_lbl_decor_pnl";
             this.vr_lbl_decor_pnl.Size = new System.Drawing.Size(322, 74);
             this.vr_lbl_decor_pnl.TabIndex = 15;
@@ -207,7 +214,7 @@
             // 
             this.odometer_lbl_decor_pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(176)))), ((int)(((byte)(49)))));
             this.odometer_lbl_decor_pnl.Controls.Add(this.odometer_lbl);
-            this.odometer_lbl_decor_pnl.Location = new System.Drawing.Point(31, 443);
+            this.odometer_lbl_decor_pnl.Location = new System.Drawing.Point(23, 401);
             this.odometer_lbl_decor_pnl.Name = "odometer_lbl_decor_pnl";
             this.odometer_lbl_decor_pnl.Size = new System.Drawing.Size(322, 74);
             this.odometer_lbl_decor_pnl.TabIndex = 16;
@@ -216,7 +223,7 @@
             // 
             this.barcode_lbl_decor_pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(176)))), ((int)(((byte)(49)))));
             this.barcode_lbl_decor_pnl.Controls.Add(this.barcode_lbl);
-            this.barcode_lbl_decor_pnl.Location = new System.Drawing.Point(702, 288);
+            this.barcode_lbl_decor_pnl.Location = new System.Drawing.Point(694, 246);
             this.barcode_lbl_decor_pnl.Name = "barcode_lbl_decor_pnl";
             this.barcode_lbl_decor_pnl.Size = new System.Drawing.Size(322, 74);
             this.barcode_lbl_decor_pnl.TabIndex = 17;
@@ -225,7 +232,7 @@
             // 
             this.vendor_lbl_decor_pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(176)))), ((int)(((byte)(49)))));
             this.vendor_lbl_decor_pnl.Controls.Add(this.vendor_lbl);
-            this.vendor_lbl_decor_pnl.Location = new System.Drawing.Point(702, 443);
+            this.vendor_lbl_decor_pnl.Location = new System.Drawing.Point(694, 401);
             this.vendor_lbl_decor_pnl.Name = "vendor_lbl_decor_pnl";
             this.vendor_lbl_decor_pnl.Size = new System.Drawing.Size(322, 74);
             this.vendor_lbl_decor_pnl.TabIndex = 18;
@@ -234,7 +241,7 @@
             // 
             this.fuel_lbl_decor_pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(176)))), ((int)(((byte)(49)))));
             this.fuel_lbl_decor_pnl.Controls.Add(this.fuel_capacity_lbl);
-            this.fuel_lbl_decor_pnl.Location = new System.Drawing.Point(31, 600);
+            this.fuel_lbl_decor_pnl.Location = new System.Drawing.Point(23, 558);
             this.fuel_lbl_decor_pnl.Name = "fuel_lbl_decor_pnl";
             this.fuel_lbl_decor_pnl.Size = new System.Drawing.Size(322, 74);
             this.fuel_lbl_decor_pnl.TabIndex = 19;
@@ -242,7 +249,7 @@
             // submit_btn_decor_pnl
             // 
             this.submit_btn_decor_pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(176)))), ((int)(((byte)(49)))));
-            this.submit_btn_decor_pnl.Location = new System.Drawing.Point(1256, 646);
+            this.submit_btn_decor_pnl.Location = new System.Drawing.Point(559, 716);
             this.submit_btn_decor_pnl.Name = "submit_btn_decor_pnl";
             this.submit_btn_decor_pnl.Size = new System.Drawing.Size(163, 67);
             this.submit_btn_decor_pnl.TabIndex = 20;
@@ -250,7 +257,7 @@
             // barcode_btn_decor_pnl
             // 
             this.barcode_btn_decor_pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(176)))), ((int)(((byte)(49)))));
-            this.barcode_btn_decor_pnl.Location = new System.Drawing.Point(1289, 346);
+            this.barcode_btn_decor_pnl.Location = new System.Drawing.Point(1281, 304);
             this.barcode_btn_decor_pnl.Name = "barcode_btn_decor_pnl";
             this.barcode_btn_decor_pnl.Size = new System.Drawing.Size(122, 44);
             this.barcode_btn_decor_pnl.TabIndex = 21;
@@ -258,7 +265,7 @@
             // vendor_txt_decor_pnl
             // 
             this.vendor_txt_decor_pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(68)))), ((int)(((byte)(140)))));
-            this.vendor_txt_decor_pnl.Location = new System.Drawing.Point(758, 493);
+            this.vendor_txt_decor_pnl.Location = new System.Drawing.Point(750, 451);
             this.vendor_txt_decor_pnl.Name = "vendor_txt_decor_pnl";
             this.vendor_txt_decor_pnl.Size = new System.Drawing.Size(499, 44);
             this.vendor_txt_decor_pnl.TabIndex = 22;
@@ -266,7 +273,7 @@
             // barcode_txt_decor_pnl
             // 
             this.barcode_txt_decor_pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(68)))), ((int)(((byte)(140)))));
-            this.barcode_txt_decor_pnl.Location = new System.Drawing.Point(758, 341);
+            this.barcode_txt_decor_pnl.Location = new System.Drawing.Point(750, 299);
             this.barcode_txt_decor_pnl.Name = "barcode_txt_decor_pnl";
             this.barcode_txt_decor_pnl.Size = new System.Drawing.Size(499, 44);
             this.barcode_txt_decor_pnl.TabIndex = 23;
@@ -274,7 +281,7 @@
             // odometer_txt_decor_pnl
             // 
             this.odometer_txt_decor_pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(68)))), ((int)(((byte)(140)))));
-            this.odometer_txt_decor_pnl.Location = new System.Drawing.Point(85, 493);
+            this.odometer_txt_decor_pnl.Location = new System.Drawing.Point(77, 451);
             this.odometer_txt_decor_pnl.Name = "odometer_txt_decor_pnl";
             this.odometer_txt_decor_pnl.Size = new System.Drawing.Size(499, 44);
             this.odometer_txt_decor_pnl.TabIndex = 24;
@@ -282,7 +289,7 @@
             // vr_txt_decor_pnl
             // 
             this.vr_txt_decor_pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(68)))), ((int)(((byte)(140)))));
-            this.vr_txt_decor_pnl.Location = new System.Drawing.Point(85, 341);
+            this.vr_txt_decor_pnl.Location = new System.Drawing.Point(77, 299);
             this.vr_txt_decor_pnl.Name = "vr_txt_decor_pnl";
             this.vr_txt_decor_pnl.Size = new System.Drawing.Size(499, 44);
             this.vr_txt_decor_pnl.TabIndex = 25;
@@ -290,7 +297,7 @@
             // fuel_txt_decor_pnl
             // 
             this.fuel_txt_decor_pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(68)))), ((int)(((byte)(140)))));
-            this.fuel_txt_decor_pnl.Location = new System.Drawing.Point(85, 652);
+            this.fuel_txt_decor_pnl.Location = new System.Drawing.Point(77, 610);
             this.fuel_txt_decor_pnl.Name = "fuel_txt_decor_pnl";
             this.fuel_txt_decor_pnl.Size = new System.Drawing.Size(499, 44);
             this.fuel_txt_decor_pnl.TabIndex = 26;
@@ -316,13 +323,14 @@
             this.private_reg_radbtn.TabStop = true;
             this.private_reg_radbtn.Text = "Private Registration";
             this.private_reg_radbtn.UseVisualStyleBackColor = true;
+            this.private_reg_radbtn.CheckedChanged += new System.EventHandler(this.private_reg_radbtn_CheckedChanged);
             // 
             // rad_btn_back_pnl
             // 
             this.rad_btn_back_pnl.BackColor = System.Drawing.Color.White;
             this.rad_btn_back_pnl.Controls.Add(this.prefix_reg_radbtn);
             this.rad_btn_back_pnl.Controls.Add(this.private_reg_radbtn);
-            this.rad_btn_back_pnl.Location = new System.Drawing.Point(716, 600);
+            this.rad_btn_back_pnl.Location = new System.Drawing.Point(708, 558);
             this.rad_btn_back_pnl.Name = "rad_btn_back_pnl";
             this.rad_btn_back_pnl.Size = new System.Drawing.Size(322, 100);
             this.rad_btn_back_pnl.TabIndex = 29;
@@ -330,7 +338,7 @@
             // rad_btn_decor_pnl
             // 
             this.rad_btn_decor_pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(176)))), ((int)(((byte)(49)))));
-            this.rad_btn_decor_pnl.Location = new System.Drawing.Point(701, 594);
+            this.rad_btn_decor_pnl.Location = new System.Drawing.Point(693, 552);
             this.rad_btn_decor_pnl.Name = "rad_btn_decor_pnl";
             this.rad_btn_decor_pnl.Size = new System.Drawing.Size(322, 100);
             this.rad_btn_decor_pnl.TabIndex = 30;
@@ -338,16 +346,78 @@
             // rad_btn_
             // 
             this.rad_btn_.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(68)))), ((int)(((byte)(140)))));
-            this.rad_btn_.Location = new System.Drawing.Point(730, 607);
+            this.rad_btn_.Location = new System.Drawing.Point(722, 565);
             this.rad_btn_.Name = "rad_btn_";
             this.rad_btn_.Size = new System.Drawing.Size(321, 99);
             this.rad_btn_.TabIndex = 31;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Location = new System.Drawing.Point(1107, 558);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(322, 100);
+            this.panel1.TabIndex = 32;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(14, 7);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(199, 40);
+            this.radioButton1.TabIndex = 27;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "place holder";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(14, 53);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(199, 40);
+            this.radioButton2.TabIndex = 28;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "place holder";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(176)))), ((int)(((byte)(49)))));
+            this.panel2.Location = new System.Drawing.Point(1092, 552);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(322, 100);
+            this.panel2.TabIndex = 33;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(68)))), ((int)(((byte)(140)))));
+            this.panel3.Location = new System.Drawing.Point(1121, 565);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(321, 99);
+            this.panel3.TabIndex = 34;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(1264, 455);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(200, 40);
+            this.checkBox1.TabIndex = 35;
+            this.checkBox1.Text = "place holder\r\n";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // getting_car_details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1700, 1012);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.rad_btn_back_pnl);
             this.Controls.Add(this.vendor_txt);
             this.Controls.Add(this.submit_btn);
@@ -391,6 +461,8 @@
             this.fuel_lbl_decor_pnl.PerformLayout();
             this.rad_btn_back_pnl.ResumeLayout(false);
             this.rad_btn_back_pnl.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -429,6 +501,12 @@
         private System.Windows.Forms.Panel rad_btn_back_pnl;
         private System.Windows.Forms.Panel rad_btn_decor_pnl;
         private System.Windows.Forms.Panel rad_btn_;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

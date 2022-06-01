@@ -76,8 +76,7 @@ namespace Gate_In
                 add_data.Parameters["@Barcode"].Value = barcode_txt.Text;
                 if (private_reg_radbtn.Checked == true)
                 {
-                    add_data.Parameters.Add("@IsPrivate", MySqlDbType.VarChar);
-                    add_data.Parameters["@IsPrivate"].Value = true;
+                    MessageBox.Show("You must request the vehicles V5 and remove the plates from the vehicle before submitting!");
                 }
                 else
                 {
@@ -119,6 +118,14 @@ namespace Gate_In
             barcode_scanner barcodescannerpage = new barcode_scanner();
             this.Hide();
             barcodescannerpage.Show();
+        }
+
+        private void private_reg_radbtn_CheckedChanged(object sender, EventArgs e)
+        {
+            if (private_reg_radbtn.Checked == true)
+            {
+                MessageBox.Show("Request the vehicles V5 and remove the plates from the vehicle!");
+            }
         }
     }
 }
