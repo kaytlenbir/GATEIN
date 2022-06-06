@@ -60,11 +60,14 @@
             this.rad_btn_decor_pnl = new System.Windows.Forms.Panel();
             this.rad_btn_ = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.no_service_radbtn = new System.Windows.Forms.RadioButton();
+            this.full_service_radbtn = new System.Windows.Forms.RadioButton();
+            this.part_service_radbtn = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.valid_mot_chk = new System.Windows.Forms.CheckBox();
+            this.has_v5_chk = new System.Windows.Forms.CheckBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.top_pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.compnay_logo_png)).BeginInit();
             this.vr_lbl_decor_pnl.SuspendLayout();
@@ -74,6 +77,7 @@
             this.fuel_lbl_decor_pnl.SuspendLayout();
             this.rad_btn_back_pnl.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // top_pnl
@@ -193,7 +197,7 @@
             this.submit_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(68)))), ((int)(((byte)(140)))));
             this.submit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.submit_btn.ForeColor = System.Drawing.Color.White;
-            this.submit_btn.Location = new System.Drawing.Point(551, 706);
+            this.submit_btn.Location = new System.Drawing.Point(600, 698);
             this.submit_btn.Name = "submit_btn";
             this.submit_btn.Size = new System.Drawing.Size(163, 68);
             this.submit_btn.TabIndex = 14;
@@ -249,10 +253,11 @@
             // submit_btn_decor_pnl
             // 
             this.submit_btn_decor_pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(176)))), ((int)(((byte)(49)))));
-            this.submit_btn_decor_pnl.Location = new System.Drawing.Point(559, 716);
+            this.submit_btn_decor_pnl.Location = new System.Drawing.Point(608, 708);
             this.submit_btn_decor_pnl.Name = "submit_btn_decor_pnl";
             this.submit_btn_decor_pnl.Size = new System.Drawing.Size(163, 67);
             this.submit_btn_decor_pnl.TabIndex = 20;
+            this.submit_btn_decor_pnl.Paint += new System.Windows.Forms.PaintEventHandler(this.submit_btn_decor_pnl_Paint);
             // 
             // barcode_btn_decor_pnl
             // 
@@ -330,7 +335,7 @@
             this.rad_btn_back_pnl.BackColor = System.Drawing.Color.White;
             this.rad_btn_back_pnl.Controls.Add(this.prefix_reg_radbtn);
             this.rad_btn_back_pnl.Controls.Add(this.private_reg_radbtn);
-            this.rad_btn_back_pnl.Location = new System.Drawing.Point(708, 558);
+            this.rad_btn_back_pnl.Location = new System.Drawing.Point(1102, 527);
             this.rad_btn_back_pnl.Name = "rad_btn_back_pnl";
             this.rad_btn_back_pnl.Size = new System.Drawing.Size(322, 100);
             this.rad_btn_back_pnl.TabIndex = 29;
@@ -338,7 +343,7 @@
             // rad_btn_decor_pnl
             // 
             this.rad_btn_decor_pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(176)))), ((int)(((byte)(49)))));
-            this.rad_btn_decor_pnl.Location = new System.Drawing.Point(693, 552);
+            this.rad_btn_decor_pnl.Location = new System.Drawing.Point(1087, 521);
             this.rad_btn_decor_pnl.Name = "rad_btn_decor_pnl";
             this.rad_btn_decor_pnl.Size = new System.Drawing.Size(322, 100);
             this.rad_btn_decor_pnl.TabIndex = 30;
@@ -346,7 +351,7 @@
             // rad_btn_
             // 
             this.rad_btn_.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(68)))), ((int)(((byte)(140)))));
-            this.rad_btn_.Location = new System.Drawing.Point(722, 565);
+            this.rad_btn_.Location = new System.Drawing.Point(1116, 534);
             this.rad_btn_.Name = "rad_btn_";
             this.rad_btn_.Size = new System.Drawing.Size(321, 99);
             this.rad_btn_.TabIndex = 31;
@@ -354,70 +359,100 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Location = new System.Drawing.Point(1107, 558);
+            this.panel1.Controls.Add(this.no_service_radbtn);
+            this.panel1.Controls.Add(this.full_service_radbtn);
+            this.panel1.Controls.Add(this.part_service_radbtn);
+            this.panel1.Location = new System.Drawing.Point(708, 527);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(322, 100);
+            this.panel1.Size = new System.Drawing.Size(322, 148);
             this.panel1.TabIndex = 32;
             // 
-            // radioButton1
+            // no_service_radbtn
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(14, 7);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(199, 40);
-            this.radioButton1.TabIndex = 27;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "place holder";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.no_service_radbtn.AutoSize = true;
+            this.no_service_radbtn.Location = new System.Drawing.Point(14, 99);
+            this.no_service_radbtn.Name = "no_service_radbtn";
+            this.no_service_radbtn.Size = new System.Drawing.Size(278, 40);
+            this.no_service_radbtn.TabIndex = 29;
+            this.no_service_radbtn.TabStop = true;
+            this.no_service_radbtn.Text = "No Service History";
+            this.no_service_radbtn.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // full_service_radbtn
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(14, 53);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(199, 40);
-            this.radioButton2.TabIndex = 28;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "place holder";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.full_service_radbtn.AutoSize = true;
+            this.full_service_radbtn.Location = new System.Drawing.Point(14, 7);
+            this.full_service_radbtn.Name = "full_service_radbtn";
+            this.full_service_radbtn.Size = new System.Drawing.Size(289, 40);
+            this.full_service_radbtn.TabIndex = 27;
+            this.full_service_radbtn.TabStop = true;
+            this.full_service_radbtn.Text = "Full Service History";
+            this.full_service_radbtn.UseVisualStyleBackColor = true;
+            // 
+            // part_service_radbtn
+            // 
+            this.part_service_radbtn.AutoSize = true;
+            this.part_service_radbtn.Location = new System.Drawing.Point(14, 53);
+            this.part_service_radbtn.Name = "part_service_radbtn";
+            this.part_service_radbtn.Size = new System.Drawing.Size(296, 40);
+            this.part_service_radbtn.TabIndex = 28;
+            this.part_service_radbtn.TabStop = true;
+            this.part_service_radbtn.Text = "Part Service History";
+            this.part_service_radbtn.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(176)))), ((int)(((byte)(49)))));
-            this.panel2.Location = new System.Drawing.Point(1092, 552);
+            this.panel2.Location = new System.Drawing.Point(693, 522);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(322, 100);
+            this.panel2.Size = new System.Drawing.Size(322, 148);
             this.panel2.TabIndex = 33;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(68)))), ((int)(((byte)(140)))));
-            this.panel3.Location = new System.Drawing.Point(1121, 565);
+            this.panel3.Location = new System.Drawing.Point(723, 535);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(321, 99);
+            this.panel3.Size = new System.Drawing.Size(321, 147);
             this.panel3.TabIndex = 34;
             // 
-            // checkBox1
+            // valid_mot_chk
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(1264, 455);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(200, 40);
-            this.checkBox1.TabIndex = 35;
-            this.checkBox1.Text = "place holder\r\n";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.valid_mot_chk.AutoSize = true;
+            this.valid_mot_chk.BackColor = System.Drawing.Color.Transparent;
+            this.valid_mot_chk.Location = new System.Drawing.Point(12, 3);
+            this.valid_mot_chk.Name = "valid_mot_chk";
+            this.valid_mot_chk.Size = new System.Drawing.Size(173, 40);
+            this.valid_mot_chk.TabIndex = 35;
+            this.valid_mot_chk.Text = "Valid MOT";
+            this.valid_mot_chk.UseVisualStyleBackColor = false;
+            // 
+            // has_v5_chk
+            // 
+            this.has_v5_chk.AutoSize = true;
+            this.has_v5_chk.Location = new System.Drawing.Point(205, 3);
+            this.has_v5_chk.Name = "has_v5_chk";
+            this.has_v5_chk.Size = new System.Drawing.Size(129, 40);
+            this.has_v5_chk.TabIndex = 36;
+            this.has_v5_chk.Text = "Has V5";
+            this.has_v5_chk.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(176)))), ((int)(((byte)(49)))));
+            this.panel4.Controls.Add(this.has_v5_chk);
+            this.panel4.Controls.Add(this.valid_mot_chk);
+            this.panel4.Location = new System.Drawing.Point(1090, 642);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(347, 40);
+            this.panel4.TabIndex = 37;
             // 
             // getting_car_details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1700, 1012);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.rad_btn_back_pnl);
             this.Controls.Add(this.vendor_txt);
             this.Controls.Add(this.submit_btn);
@@ -441,12 +476,16 @@
             this.Controls.Add(this.barcode_txt_decor_pnl);
             this.Controls.Add(this.rad_btn_decor_pnl);
             this.Controls.Add(this.rad_btn_);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel4);
             this.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "getting_car_details";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Enter the vehicle details";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.getting_car_details_Load);
             this.top_pnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.compnay_logo_png)).EndInit();
             this.vr_lbl_decor_pnl.ResumeLayout(false);
@@ -463,6 +502,8 @@
             this.rad_btn_back_pnl.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -502,11 +543,14 @@
         private System.Windows.Forms.Panel rad_btn_decor_pnl;
         private System.Windows.Forms.Panel rad_btn_;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton full_service_radbtn;
+        private System.Windows.Forms.RadioButton part_service_radbtn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox valid_mot_chk;
+        private System.Windows.Forms.RadioButton no_service_radbtn;
+        private System.Windows.Forms.CheckBox has_v5_chk;
+        private System.Windows.Forms.Panel panel4;
     }
 }
 

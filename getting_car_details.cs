@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
 
 namespace Gate_In
 {
@@ -20,30 +21,31 @@ namespace Gate_In
         private MySqlConnection connect_to_db()
         {
             MySqlConnection db = new MySqlConnection();
-            db.ConnectionString = @"host=10.252.0.104; port=3306; uid=root; database=manheim_database; pwd=root;";
+            db.ConnectionString = @"host=192.168.20.208; port=3306; uid=root; database=manheim_database; pwd=root;";
             return db;
         }
+
+
         private bool validation()
         {
-            try
+            Regex is_decimal = new Regex("[0-9]+(/.[0-9][0-9]?)?");
+            Regex is_number = new Regex("^[0-9]+$");
+
+            if (is_decimal.IsMatch(fuel_capacity_txt.Text))
             {
                 if ((Convert.ToDouble(fuel_capacity_txt.Text)) != 0.25 && (Convert.ToDouble(fuel_capacity_txt.Text)) != 0.5 &&
-                (Convert.ToDouble(fuel_capacity_txt.Text)) != 0.75 && (Convert.ToDouble(fuel_capacity_txt.Text)) != 1)
+                    (Convert.ToDouble(fuel_capacity_txt.Text)) != 0.75 && (Convert.ToDouble(fuel_capacity_txt.Text)) != 1)
                 {
                     MessageBox.Show("Capacity can either be 0.25, 0.5, 0.75 or 1!");
                     return false;
                 }
             }
-            catch
+            else
             {
-                MessageBox.Show("Fuel capacity must be a number!");
+                MessageBox.Show("The fuel reading must be a number!");
                 return false;
             }
-            try
-            {
-                Convert.ToInt32(odometer_txt.Text);
-            }
-            catch
+            if (!is_number.IsMatch(odometer_txt.Text))
             {
                 MessageBox.Show("The odometer reading must be a number!");
                 return false;
@@ -59,7 +61,9 @@ namespace Gate_In
         private void add_vehicle()
         {
             MySqlConnection db = connect_to_db();
-            string command = "INSERT INTO gatein(vrm, odometer, fuelcapacity, vendor, barcode, isprivate) VALUES(@VRM, @Odometer, @FTCapacity, @Vendor, @Barcode, @IsPrivate)";
+            string command = "INSERT INTO gatein(vrm, odometer, fuelcapacity, vendor, barcode, isprivate, servicehistory, mot, v5) " +
+                "VALUES(@VRM, @Odometer, @FTCapacity, @Vendor, @Barcode, @IsPrivate, @servicehistory, @mot, @v5)";
+
             using (db)
             {
                 MySqlCommand add_data = new MySqlCommand(command, db);
@@ -74,16 +78,53 @@ namespace Gate_In
                 add_data.Parameters["@Vendor"].Value = vendor_txt.Text;
                 add_data.Parameters.Add("@Barcode", MySqlDbType.VarChar);
                 add_data.Parameters["@Barcode"].Value = barcode_txt.Text;
+                
                 if (private_reg_radbtn.Checked == true)
                 {
                     MessageBox.Show("You must request the vehicles V5 and remove the plates from the vehicle before submitting!");
+                    add_data.Parameters.Add("@IsPrivate", MySqlDbType.VarChar);
+                    add_data.Parameters["@IsPrivate"].Value = 1;
                 }
                 else
                 {
                     add_data.Parameters.Add("@IsPrivate", MySqlDbType.VarChar);
-                    add_data.Parameters["@IsPrivate"].Value = false;
+                    add_data.Parameters["@IsPrivate"].Value = 0;
                 }
-                
+                if (valid_mot_chk.Checked == true)
+                {
+                    add_data.Parameters.Add("@mot", MySqlDbType.VarChar);
+                    add_data.Parameters["@mot"].Value = 1;
+                }
+                else
+                {
+                    add_data.Parameters.Add("@mot", MySqlDbType.VarChar);
+                    add_data.Parameters["@mot"].Value = 0;
+                }
+                if (has_v5_chk.Checked == true)
+                {
+                    add_data.Parameters.Add("@v5", MySqlDbType.VarChar);
+                    add_data.Parameters["@v5"].Value = 1;
+                }
+                else
+                {
+                    add_data.Parameters.Add("@v5", MySqlDbType.VarChar);
+                    add_data.Parameters["@v5"].Value = 0;
+                }
+                if (full_service_radbtn.Checked == true)
+                {
+                    add_data.Parameters.Add("@servicehistory", MySqlDbType.VarChar);
+                    add_data.Parameters["@servicehistory"].Value = "Full Service";
+                }
+                else if (part_service_radbtn.Checked == true)
+                {
+                    add_data.Parameters.Add("@servicehistory", MySqlDbType.VarChar);
+                    add_data.Parameters["@servicehistory"].Value = "Part Service";
+                }
+                else
+                {
+                    add_data.Parameters.Add("@servicehistory", MySqlDbType.VarChar);
+                    add_data.Parameters["@servicehistory"].Value = "No Service";
+                }
 
                 try // tries to run the query, any exceptions or issues will be caught.
                 {
@@ -126,6 +167,16 @@ namespace Gate_In
             {
                 MessageBox.Show("Request the vehicles V5 and remove the plates from the vehicle!");
             }
+        }
+
+        private void getting_car_details_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void submit_btn_decor_pnl_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
