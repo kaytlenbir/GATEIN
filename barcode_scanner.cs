@@ -37,7 +37,6 @@ namespace Gate_In
                     submit_btn.Visible = true;
                     submit_btn_decor_pnl.Visible = true;
                     barcode = result.ToString();
-                    MessageBox.Show("Scanned!");
                 }));
             }
             pictureBox.Image = bitmap;
