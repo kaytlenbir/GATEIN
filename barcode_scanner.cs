@@ -42,6 +42,29 @@ namespace Gate_In
             pictureBox.Image = bitmap;
         }
 
+        private Size oldSize;
+        private void Form1_Load(object sender, EventArgs e) => oldSize = base.Size;
+
+        protected override void OnResize(System.EventArgs e)
+        {
+            base.OnResize(e);
+
+            foreach (Control cnt in this.Controls)
+                ResizeAll(cnt, base.Size);
+
+            oldSize = base.Size;
+        }
+        private void ResizeAll(Control control, Size newSize)
+        {
+            int width = newSize.Width - oldSize.Width;
+            control.Left += (control.Left * width) / oldSize.Width;
+            control.Width += (control.Width * width) / oldSize.Width;
+
+            int height = newSize.Height - oldSize.Height;
+            control.Top += (control.Top * height) / oldSize.Height;
+            control.Height += (control.Height * height) / oldSize.Height;
+        }
+
         private void test()
         {
             this.Close();
