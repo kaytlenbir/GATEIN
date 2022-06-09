@@ -21,7 +21,7 @@ namespace Gate_In
         private MySqlConnection connect_to_db()
         {
             MySqlConnection db = new MySqlConnection();
-            db.ConnectionString = @"host=192.168.20.208; port=3306; uid=root; database=manheim_database; pwd=root;";
+            db.ConnectionString = @"host=192.168.137.5; port=3306; uid=root; database=manheim_database; pwd=root;";
             return db;
         }
 
@@ -52,7 +52,12 @@ namespace Gate_In
             }
             if (private_reg_radbtn.Checked == false && prefix_reg_radbtn.Checked == false)
             {
-                MessageBox.Show("You must tick whether the car has a priatve registration or not!");
+                MessageBox.Show("You must tick whether the car has a private registration or not!");
+                return false;
+            }
+            if (full_service_radbtn.Checked == false && part_service_radbtn.Checked == false && no_service_radbtn.Checked == false)
+            {
+                MessageBox.Show("You must select the service history of the car!");
                 return false;
             }
             return true;    
@@ -136,7 +141,10 @@ namespace Gate_In
                 }
                 catch (MySqlException ex)
                 {
-                    MessageBox.Show(Convert.ToString(ex.Number));
+                    if (ex.Number == 1130)
+                    {
+                        MessageBox.Show("Error!");
+                    }
                 }
                 finally
                 {
