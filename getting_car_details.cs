@@ -47,6 +47,8 @@ namespace Gate_In
             control.Top += (control.Top * height) / oldSize.Height;
             control.Height += (control.Height * height) / oldSize.Height;
         }
+
+
         private bool validation()
         {
             Regex is_decimal = new Regex("[0-9]+(/.[0-9][0-9]?)?");
@@ -207,5 +209,6 @@ namespace Gate_In
         {
 
         }
+
     }
 }
