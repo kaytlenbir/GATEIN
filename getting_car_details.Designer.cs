@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.top_pnl = new System.Windows.Forms.Panel();
             this.compnay_logo_png = new System.Windows.Forms.PictureBox();
             this.vr_lbl = new System.Windows.Forms.Label();

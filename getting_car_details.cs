@@ -17,6 +17,14 @@ namespace Gate_In
         public getting_car_details()
         {
             InitializeComponent();
+            float widthRatio = Screen.PrimaryScreen.Bounds.Width / 1280;
+            float heightRatio = Screen.PrimaryScreen.Bounds.Height / 800f;
+            SizeF scale = new SizeF(widthRatio, heightRatio);
+            this.Scale(scale);
+            foreach (Control control in this.Controls)
+            {
+                control.Font = new Font("Tahoma", control.Font.SizeInPoints * heightRatio * widthRatio);
+            }
         }
         private MySqlConnection connect_to_db()
         {
@@ -47,6 +55,7 @@ namespace Gate_In
             control.Top += (control.Top * height) / oldSize.Height;
             control.Height += (control.Height * height) / oldSize.Height;
         }
+
 
 
         private bool validation()
